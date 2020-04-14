@@ -49,6 +49,10 @@ GPIO.setup(11, GPIO.IN, pull_up_down=GPIO.PUD_UP)
 #Warning = 'none'
 
 'blalalala'
+
+'blalalala'
+
+'blalalala'
 class MainApp(tk.Tk):
 
     def __init__(self, *args, **kwargs):
