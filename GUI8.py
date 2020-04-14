@@ -66,7 +66,7 @@ class MainApp(tk.Tk):
         global ValueFont
         ValueFont = Font(family="DS-Digital", size=29, weight='bold')
         global Valuecolor
-        Valuecolor = '#E14500'
+        Valuecolor = 'white'
         global UnitFont
         UnitFont = Font(family="DS-Digital", size=18, weight='bold')
         global Unitcolor
