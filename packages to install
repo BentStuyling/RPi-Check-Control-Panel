@@ -1,0 +1,58 @@
+sudo apt-get install python3-pip python3-dev
+pip3 install matplotlib
+pip3 install numpy
+
+
+#wget https://github.com/lhelontra/tensorflow-on-arm/releases/download/v1.8.0/tensorflow-1.8.0-cp35-none-linux_armv7l.whl
+#sudo pip3 install /tensorflow-1.8.0-cp35-none-linux_armv7l.whl
+#sudo apt-get install libatlas-base-dev
+
+sudo apt-get install python3-pip python3-dev
+sudo apt-get install libatlas-base-dev
+
+sudo apt-get install xarchiver
+sudo apt-get install python3-tk
+sudo pip3 install Adafruit-ADS1x15
+sudo pip3 install smbus2
+sudo pip3 install bme280
+sudo pip3 install RPi.GPIO
+
+
+create a new directory in your home folder called ".fonts" (/home/pi/.fonts  – note the dot). 
+Then copy ds-digital font from www.dafont.com into there. 
+##
+Installing the Real time Clock RTC DS3231:
+Partly follow these instructions (for jessie): https://cdn-learn.adafruit.com/downloads/pdf/adding-a-real-time-clock-to-raspberry-pi.pdf
+Actually do:
+sudo nano /boot/config.txt
+and add:
+dtoverlay=i2c-rtc,ds3231
+
+Run sudo nano /lib/udev/hwclock-set and comment out these three lines:
+#if [ -e /run/systemd/system ] ; then
+# exit 0
+#fi
+
+##
+Installing BME280 humidity, pressure and temp sensor:
+https://pypi.org/project/RPi.bme280/
+sudo pip3 install RPi.bme280
+
+##
+Installing the 1 wire DS18B20 temperature sensor
+sudo nano /boot/config.txt
+add:
+dtoverlay=w1-gpio
+
+sudo nano /etc/modules
+add:
+w1-gpio pullup=1
+w1-therm
+
+## prevent the cursor from hoovering over the start button at startup:
+sudo nano /etc/xdg/lxsession/LXDE-pi/autostart
+comment out: @point-rpi
+
+Prevent the mouse cursor from showing up:
+sudo nano /usr/bin/startx
+change the defaultserverargs line to: defaultserverargs="-nocursor"

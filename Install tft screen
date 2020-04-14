@@ -1,0 +1,23 @@
+goeie schemrpje: https://www.aliexpress.com/item/32945052728.html?spm=a2g0s.9042311.0.0.effc4c4dV6twuM
+In case of stretch lite install follow this guide and isntall RPD and also step 3
+https://www.raspberrypi.org/forums/viewtopic.php?t=133691
+
+
+Follow instructions over here: https://www.xgadget.de/anleitung/2-2-spi-display-ili9341-am-raspberry-betreiben/
+Misschien nog beter: http://lallafa.de/blog/2015/03/fbtft-setup-on-modern-raspbian/
+
+sudo nano /usr/share/X11/xorg.conf.d/99-fbturbo.conf 
+change fb0 to fb1
+
+set following values in sudo nano /etc/rc.local
+con2fbmap 1 1 
+even checken of de volgende regel er ook wel bij moet:
+sudo FRAMEBUFFER=/dev/fb1 startx
+
+
+Developpen met HDMI scherm, in Command LIne:
+FRAMEBUFFER=/dev/fb0 startx in tty2 om HDMI te starten
+FRAMEBUFFER=/dev/fb1 startx in tty1 om desktop op tftpanel te starten
+
+om te framebuffer copyen (nu nog niet nodig):
+https://github.com/notro/fbtft/wiki/Framebuffer-use

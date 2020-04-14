@@ -1,0 +1,3 @@
+sudo nano /etc/xdg/lxsession/LXDE-pi/autostart
+
+add: @/usr/bin/python3 /home/pi/GUI5.py

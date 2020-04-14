@@ -1,0 +1,38 @@
+https://github.com/dtsvetkov1/Google-Drive-sync
+
+install libraries foor googole drive api:
+pip3 install --upgrade google-api-python-client google-auth-httplib2 google-auth-oauthlib oauth2client
+##
+make a new service:
+sudo nano /lib/systemd/system/gd_sync.service
+
+
+##
+put in this file:
+[Unit]
+Description=My Script Service
+After=network-online.target
+
+[Service]
+Type=simple
+User=pi
+WorkingDirectory=/home/pi
+ExecStartPre=/bin/sleep 30
+ExecStart=/usr/bin/python3 /home/pi/auto_sync_ul.py
+ExecStartPost= /usr/bin/python3 /home/pi/auto_sync_dl.py
+
+
+[Install]
+WantedBy=multi-user.target
+
+##
+
+then enable and start the service:
+sudo systemctl daemon-reload
+sudo systemctl enable gd_sync.service
+sudo systemctl start gd_sync.service
+
+make the scrip excecutable:
+sudo chmod +x /home/pi/ auto_sync_ul.py
+sudo chmod +x /home/pi/ auto_sync_dl.py
+reboot
