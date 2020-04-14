@@ -47,11 +47,7 @@ GPIO.setup(11, GPIO.IN, pull_up_down=GPIO.PUD_UP)
 # pwm.ChangeDutyCycle(100)
 
 #Warning = 'none'
-'commit to mastertest'
 
-'blalalala'
-
-'blalalala'
 class MainApp(tk.Tk):
 
     def __init__(self, *args, **kwargs):
@@ -69,7 +65,7 @@ class MainApp(tk.Tk):
         global ValueFont
         ValueFont = Font(family="DS-Digital", size=29, weight='bold')
         global Valuecolor
-        Valuecolor = 'white'
+        Valuecolor = '#E14500'
         global UnitFont
         UnitFont = Font(family="DS-Digital", size=18, weight='bold')
         global Unitcolor
