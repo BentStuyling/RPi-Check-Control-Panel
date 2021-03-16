@@ -2,6 +2,17 @@ goeie schemrpje: https://www.aliexpress.com/item/32945052728.html?spm=a2g0s.9042
 In case of stretch lite install follow this guide and isntall RPD and also step 3
 https://www.raspberrypi.org/forums/viewtopic.php?t=133691
 
+or:
+sudo apt-get update
+sudo apt-get upgrade
+sudo apt-get dist-upgrade
+sudo apt-get clean
+
+sudo apt-get install --no-install-recommends xserver-xorg
+#sudo apt-get install --no-install-recommends xinit
+sudo apt-get install openbox lxterminal
+sudo apt-get install lightdm
+
 
 Follow instructions over here: https://www.xgadget.de/anleitung/2-2-spi-display-ili9341-am-raspberry-betreiben/
 Misschien nog beter: http://lallafa.de/blog/2015/03/fbtft-setup-on-modern-raspbian/
