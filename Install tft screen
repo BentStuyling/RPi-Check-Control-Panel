@@ -31,16 +31,9 @@ set following values in sudo nano /etc/rc.local
 con2fbmap 1 1 
 sudo FRAMEBUFFER=/dev/fb1 startx
 
+No cursor and no screen blanking:
 sudo nano /etc/lightdm/lightdm.conf
-add: xserver-command=X -bs -core -nocursor
-
-no screen blanking
-sudo nano  /etc/xdg/openbox/environment
-add:
-# Suppress screensaver start attempts and autoblanking
-xscreensaver -no-splash &
-xset -dpms &
-xset s off &
+add: xserver-command=X -bs -core -nocursor -s 0 dpms
 
 OUD:
 
