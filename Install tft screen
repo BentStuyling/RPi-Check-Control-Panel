@@ -31,6 +31,16 @@ set following values in sudo nano /etc/rc.local
 con2fbmap 1 1 
 sudo FRAMEBUFFER=/dev/fb1 startx
 
+## prevent the cursor from hoovering over the start button at startup:
+sudo nano /etc/xdg/lxsession/LXDE-pi/autostart
+comment out: @point-rpi
+
+Prevent the mouse cursor from showing up:
+sudo nano /usr/bin/startx
+change the defaultserverargs line to: defaultserverargs="-nocursor"
+
+
+
 OUD:
 
 Follow instructions over here: https://www.xgadget.de/anleitung/2-2-spi-display-ili9341-am-raspberry-betreiben/
