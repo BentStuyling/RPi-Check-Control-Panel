@@ -39,7 +39,13 @@ Prevent the mouse cursor from showing up:
 sudo nano /etc/lightdm/lightdm.conf
 add: xserver-command=X -bs -core -nocursor
 
-
+no screen blanking
+sudo nano  /etc/xdg/openbox/environment
+add:
+# Suppress screensaver start attempts and autoblanking
+xscreensaver -no-splash &
+xset -dpms &
+xset s off &
 
 OUD:
 
