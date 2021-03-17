@@ -1,4 +1,5 @@
 sudo apt-get install python3-pip
+sudo apt install git
 pip3 install matplotlib
 
 wget https://github.com/lhelontra/tensorflow-on-arm/releases/download/v1.8.0/tensorflow-1.8.0-cp35-none-linux_armv7l.whl
