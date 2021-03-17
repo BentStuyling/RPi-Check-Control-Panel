@@ -20,8 +20,8 @@ sudo cp rpi-display.dtbo /boot/overlays/rpi-display.dtbo
 
 sudo nano /boot/config.txt
 add:
-dtoverlay=rpi-display,speed=80000000 fps=60, rotate=180
-$ sudo reboot
+dtoverlay=rpi-display,speed=80000000,fps=60,rotate=180
+sudo reboot
 
 sudo apt-get install xserver-xorg-video-fbturbo
 sudo nano /usr/share/X11/xorg.conf.d/99-fbturbo.conf
