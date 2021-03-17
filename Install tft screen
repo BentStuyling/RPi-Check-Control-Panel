@@ -27,9 +27,6 @@ sudo apt-get install xserver-xorg-video-fbturbo
 sudo nano /usr/share/X11/xorg.conf.d/99-fbturbo.conf
 change:  fb0 to fb1
 
-sudo nano /usr/share/X11/xorg.conf.d/99-fbturbo.conf 
-change fb0 to fb1
-
 set following values in sudo nano /etc/rc.local
 con2fbmap 1 1 
 sudo FRAMEBUFFER=/dev/fb1 startx
