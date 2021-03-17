@@ -13,18 +13,30 @@ sudo apt-get install --no-install-recommends xserver-xorg
 sudo apt-get install openbox lxterminal
 sudo apt-get install lightdm
 
+#tft shizle:
+wget -N https://github.com/watterott/RPi-Display/raw/master/software/rpi-display.dtbo
+sudo cp rpi-display.dtbo /boot/overlays/rpi-display.dtbo
 
-Follow instructions over here: https://www.xgadget.de/anleitung/2-2-spi-display-ili9341-am-raspberry-betreiben/
-Misschien nog beter: http://lallafa.de/blog/2015/03/fbtft-setup-on-modern-raspbian/
+
+sudo nano /boot/config.txt
+add:
+dtoverlay=rpi-display,speed=80000000 fps=60, rotate=180
+$ sudo reboot
+
+sudo apt-get install xserver-xorg-video-fbturbo
+sudo nano /usr/share/X11/xorg.conf.d/99-fbturbo.conf
+change:  fb0 to fb1
 
 sudo nano /usr/share/X11/xorg.conf.d/99-fbturbo.conf 
 change fb0 to fb1
 
 set following values in sudo nano /etc/rc.local
 con2fbmap 1 1 
-even checken of de volgende regel er ook wel bij moet:
 sudo FRAMEBUFFER=/dev/fb1 startx
 
+OUD:
+
+Follow instructions over here: https://www.xgadget.de/anleitung/2-2-spi-display-ili9341-am-raspberry-betreiben/
 
 Developpen met HDMI scherm, in Command LIne:
 FRAMEBUFFER=/dev/fb0 startx in tty2 om HDMI te starten
