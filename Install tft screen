@@ -25,7 +25,7 @@ sudo reboot
 
 sudo apt-get install xserver-xorg-video-fbturbo
 sudo nano /usr/share/X11/xorg.conf.d/99-fbturbo.conf
-change:  fb0 to fb1
+change:  fb0 to fb1 (this depends on wether a HDMI cable is connected, if yes: change fb0 to fb1)
 
 set following values in sudo nano /etc/rc.local
 con2fbmap 1 1 
