@@ -31,6 +31,9 @@ set following values in sudo nano /etc/rc.local
 con2fbmap 1 1 
 sudo FRAMEBUFFER=/dev/fb1 startx
 
+OM vanuit visual studio code de GUI op tft te runnen:
+export DISPLAY=:0.0
+
 No cursor and no screen blanking:
 sudo nano /etc/lightdm/lightdm.conf
 add: xserver-command=X -bs -core -nocursor -s 0 dpms
