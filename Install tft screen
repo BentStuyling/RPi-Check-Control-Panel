@@ -1,0 +1,50 @@
+goeie schemrpje: https://www.aliexpress.com/item/32945052728.html?spm=a2g0s.9042311.0.0.effc4c4dV6twuM
+In case of stretch lite install follow this guide and isntall RPD and also step 3
+https://www.raspberrypi.org/forums/viewtopic.php?t=133691
+
+or:
+sudo apt-get update
+sudo apt-get upgrade
+sudo apt-get dist-upgrade
+sudo apt-get clean
+
+sudo apt-get install --no-install-recommends xserver-xorg
+#sudo apt-get install --no-install-recommends xinit
+sudo apt-get install openbox lxterminal
+sudo apt-get install lightdm
+
+#tft shizle:
+wget -N https://github.com/watterott/RPi-Display/raw/master/software/rpi-display.dtbo
+sudo cp rpi-display.dtbo /boot/overlays/rpi-display.dtbo
+
+
+sudo nano /boot/config.txt
+add:
+dtoverlay=rpi-display,speed=80000000,fps=60,rotate=180
+sudo reboot
+
+sudo apt-get install xserver-xorg-video-fbturbo
+sudo nano /usr/share/X11/xorg.conf.d/99-fbturbo.conf
+change:  fb0 to fb1 (this depends on wether a HDMI cable is connected, if yes: change fb0 to fb1)
+
+set following values in sudo nano /etc/rc.local
+con2fbmap 1 1 
+sudo FRAMEBUFFER=/dev/fb1 startx
+
+OM vanuit visual studio code de GUI op tft te runnen:
+export DISPLAY=:0.0
+
+No cursor and no screen blanking:
+sudo nano /etc/lightdm/lightdm.conf
+add: xserver-command=X -bs -core -nocursor -s 0 dpms
+
+OUD:
+
+Follow instructions over here: https://www.xgadget.de/anleitung/2-2-spi-display-ili9341-am-raspberry-betreiben/
+
+Developpen met HDMI scherm, in Command LIne:
+FRAMEBUFFER=/dev/fb0 startx in tty2 om HDMI te starten
+FRAMEBUFFER=/dev/fb1 startx in tty1 om desktop op tftpanel te starten
+
+om te framebuffer copyen (nu nog niet nodig):
+https://github.com/notro/fbtft/wiki/Framebuffer-use

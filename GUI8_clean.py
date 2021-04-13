@@ -12,7 +12,7 @@ class MainApp(tk.Tk):
         tk.Tk.__init__(self, *args, **kwargs)
         self._frame = None
         # Initialize fullscreen (window resolution)
-        self.attributes('-fullscreen', False)
+        self.attributes('-fullscreen', True)
         # Fonts
         #global TitleFont
         self.TitleFont = Font(family="Helvetica", size=18)
@@ -204,7 +204,7 @@ class PageOne(tk.Frame):
 
         # put your widgets here
         # screen title
-        tk.Label(frame_lable_Title, font=self.MainApp.TitleFont, fg=Labelcolor,
+        tk.Label(frame_lable_Title, fg=Labelcolor,
                  bg='black', text='MOTOR').place(relx=.5, rely=0.5, anchor='center')
         # white line in first canvas
         linecanvas_1.create_line(0, 1, 240, 1, fill='white', width=2)
