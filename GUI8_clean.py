@@ -14,18 +14,18 @@ class MainApp(tk.Tk):
         # Initialize fullscreen (window resolution)
         self.attributes('-fullscreen', True)
         # Fonts
-        #global TitleFont
-        self.TitleFont = Font(family="Helvetica", size=18)
+        global TitleFont
+        TitleFont = Font(family="bmw-helvetica-bold", size=18, weight = 'bold')
         global LabelFont
         LabelFont = Font(family="Helvetica", size=16)
         global Labelcolor
         Labelcolor = 'white'
         global ValueFont
-        ValueFont = Font(family="Arial", size=18, weight='bold')
+        ValueFont = Font(family="DS-Digital", size=29, weight='bold')
         global Valuecolor
         Valuecolor = '#E14500'
         global UnitFont
-        UnitFont = Font(family="Arial", size=12, weight='bold')
+        UnitFont = Font(family="DS-Digital", size=18, weight='bold')
         global Unitcolor
         Unitcolor = '#E14500'
         global Graphcolor
@@ -204,7 +204,7 @@ class PageOne(tk.Frame):
 
         # put your widgets here
         # screen title
-        tk.Label(frame_lable_Title, fg=Labelcolor,
+        tk.Label(frame_lable_Title, font=TitleFont, fg=Labelcolor,
                  bg='black', text='MOTOR').place(relx=.5, rely=0.5, anchor='center')
         # white line in first canvas
         linecanvas_1.create_line(0, 1, 240, 1, fill='white', width=2)
