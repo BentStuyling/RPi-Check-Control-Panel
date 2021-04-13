@@ -1,11 +1,10 @@
 sudo apt-get install python3-pip
+sudo apt install git
 pip3 install matplotlib
+sudo apt install libopenjp2-7 libopenjp2-7-dev libopenjp2-tools
 
 wget https://github.com/lhelontra/tensorflow-on-arm/releases/download/v1.8.0/tensorflow-1.8.0-cp35-none-linux_armv7l.whl
 sudo pip3 install /tensorflow-1.8.0-cp35-none-linux_armv7l.whl
-sudo apt-get install libatlas-base-dev
-
-sudo apt-get install python3-pip python3-dev
 sudo apt-get install libatlas-base-dev
 
 sudo apt-get install xarchiver
@@ -47,10 +46,3 @@ add:
 w1-gpio pullup=1
 w1-therm
 
-## prevent the cursor from hoovering over the start button at startup:
-sudo nano /etc/xdg/lxsession/LXDE-pi/autostart
-comment out: @point-rpi
-
-Prevent the mouse cursor from showing up:
-sudo nano /usr/bin/startx
-change the defaultserverargs line to: defaultserverargs="-nocursor"
