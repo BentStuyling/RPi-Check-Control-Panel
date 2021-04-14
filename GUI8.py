@@ -57,9 +57,9 @@ class MainApp(tk.Tk):
         self.attributes('-fullscreen', True)
         # Fonts
         global TitleFont
-        TitleFont = Font(family="BMW Helvetica", size=18)
+        TitleFont = Font(family="bmw-helvetica-bold", size=18)
         global LabelFont
-        LabelFont = Font(family="BMW Helvetica", size=16)
+        LabelFont = Font(family="bmw-helvetica-bold", size=16)
         global Labelcolor
         Labelcolor = 'white'
         global ValueFont
@@ -74,7 +74,7 @@ class MainApp(tk.Tk):
         Graphcolor = '#E14500'
 
         global StatusFont
-        StatusFont = Font(family='BMW Helvetica', size=12, weight='bold')
+        StatusFont = Font(family='bmw-helvetica-bold', size=12, weight='bold')
         global StatusLabelcolor
         StatusLabelcolor = 'white'
         global StatusValuecolor
