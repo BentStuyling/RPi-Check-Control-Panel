@@ -1,3 +1,9 @@
 sudo nano /etc/xdg/openbox/autostart
 
 add: /usr/bin/python3 /home/pi/GUI5.py &
+
+
+
+enable pigpiod to auto-start on boot.
+sudo systemctl enable pigpiod
+
