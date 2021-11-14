@@ -1,3 +1,8 @@
 sudo nano /etc/xdg/openbox/autostart
 
 add: /usr/bin/python3 /home/pi/GUI5.py &
+Check /home/pi/.xsession-errors for error logs and prints from the scripts that are run from the autostart file.
+
+enable pigpiod to auto-start on boot.
+sudo systemctl enable pigpiod
+
