@@ -16,8 +16,8 @@ import matplotlib.animation as animation
 import matplotlib.figure as figure
 from tkinter.font import Font
 import tkinter as tk
-VERSION = 8.0
-Update_date = '(7-07-2020)'
+VERSION = 8.1
+Update_date = '(14-11-2021)'
 
 # Fuel rate signal
 FR_GPIO = 23
@@ -335,7 +335,7 @@ class Status(tk.Frame):
 
     def Get_wifi(self):
         self.ps = subprocess.Popen(
-            ['iwconfig'], stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
+            ['/usr/sbin/iwconfig'], stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
         try:
             # get wifi name
             output = subprocess.check_output(
@@ -1390,7 +1390,7 @@ class get_signal:
 
     def RPM(self):
         self.value = RPM_signl.frequency()*20
-        print(self.value/20)
+        #print(self.value/20)
         if self.value <= 150:
             self.value = 0
         return self.value
